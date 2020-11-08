@@ -47,6 +47,11 @@ Then it's done!
 Just parse data inside that textarea to a language object, and get strings inside with language defined by browser: `window.navigator.language`.
 Easy enough, right?
 
+## Methods
+- `i18N.get('string', 'language-code'?)`: Get a localized string for use in JavaScript.
+- `i18N.force('language-code')`: Force to use specified language.
+- `i18N.recover()`: Recover to original text.
+
 ## Hints
 - It's different from other heavy i18n tools. It's flexable, easy and the whole script belongs to yourself.
 - You can localize even a single webpage with this tool easily. Just include this script content inside a script tag.
