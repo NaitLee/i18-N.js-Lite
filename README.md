@@ -46,3 +46,8 @@ Then it's done!
 
 Just parse data inside that textarea to a language object, and get strings inside with language defined by browser: `window.navigator.language`.
 Easy enough, right?
+
+## Hints
+- It's different from other heavy i18n tools. It's flexable, easy and the whole script belongs to yourself.
+- You can localize even a single webpage with this tool easily. Just include this script content inside a script tag.
+- By default attributes like title and src are detected too. This means you can localize images, scripts or other url-related things as well.
