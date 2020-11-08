@@ -65,8 +65,13 @@
         }
     }
 
+    function get(originaltext, language) {
+        language = language || userlang;
+        return lang[language][originaltext];
+    }
+
     function force(language) {
-        recover();
+        recover(); userlang = language;
         _document.querySelectorAll('*').forEach(function(elem) {
             parseattr.forEach(function(attr) {
                 var originaltext = elem[attr];
@@ -85,10 +90,7 @@
             });
         });
     }
-
-    exports.get = function(originaltext) {
-        return lang[userlang][originaltext];
-    }
+    exports.get = get;
     exports.force = force;
     exports.recover = recover;
 
