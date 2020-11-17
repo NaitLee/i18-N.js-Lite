@@ -10,13 +10,13 @@
     var _document = document;
 
     if (window.NodeList && !NodeList.prototype.forEach) {
-       NodeList.prototype.forEach = Array.prototype.forEach;
+        NodeList.prototype.forEach = Array.prototype.forEach;
     }
 
     var data = '', dataelem = _document.querySelector('#i18-N');
     if (dataelem != null) data = dataelem.value; else return;
 
-    var lang = {}, langname = '', matchedtags = [];
+    var lang = {}, langname = '', defaultlang = 'en_US', matchedtags = [];
 
     matchedtags = data.match(/\[(.+)\]/ig);
     matchedtags.forEach(function(tag) {
@@ -66,8 +66,8 @@
     }
 
     function get(originaltext, language) {
-        language = language || userlang;
-        return lang[language][originaltext];
+        language = language || userlang || defaultlang;
+        return lang[language][originaltext] || originaltext;
     }
 
     function force(language) {
